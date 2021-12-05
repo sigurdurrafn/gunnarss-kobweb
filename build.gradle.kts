@@ -24,6 +24,11 @@ kotlin {
     js(IR) {
         moduleName = "websitekoweb"
         browser {
+            testTask {
+                useKarma {
+                    useFirefox()
+                }
+            }
             commonWebpackConfig {
                 outputFileName = "websitekoweb.js"
             }

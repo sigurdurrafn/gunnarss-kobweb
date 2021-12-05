@@ -47,9 +47,12 @@ fun NavHeader() {
             Modifier.fillMaxSize(),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            NavLink("/", "HOME")
-            NavLink("/about", "ABOUT")
-            NavLink("/markdown", "MARKDOWN")
+            NavLink("/", "Home")
+            NavLink("https://github.com/sigurdurrafn/","Code")
+            NavLink("https://www.twitter.com/sigurdur","Twitter")
+            NavLink("https://www.linkedin.com/in/sigurdurrafn/","LinkedIn")
+            NavLink("https://www.festinasweden.se/","Join me!")
+            NavLink("/blog","Blog")
             Spacer()
             Button(
                 onClick = { colorMode = colorMode.opposite() },

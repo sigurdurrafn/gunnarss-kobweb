@@ -7,19 +7,6 @@ out
 *.iml
 /*.ipr
 
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/gradle.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-/.idea/artifacts
-/.idea/compiler.xml
-/.idea/jarRepositories.xml
-/.idea/*.iml
-/.idea/modules
-/.idea/libraries-with-intellij-classes.xml
 
 # Gradle ignores
 .gradle
@@ -28,3 +15,5 @@ out
 .kobweb/*
 !.kobweb/conf.yaml
 !.kobweb/template.yaml
+/.idea/
+/.kobweb/
