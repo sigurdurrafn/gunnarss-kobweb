@@ -1,6 +1,6 @@
-Basic website
+# A website
 
-Create using [Kobweb](https://github.com/varabyte/kobweb)
+Created using [Kobweb](https://github.com/varabyte/kobweb)
 
 ## Getting Started
 
