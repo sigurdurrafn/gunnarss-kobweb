@@ -1,0 +1,13 @@
+site:
+  title: "Gunnarss"
+
+server:
+  files:
+    dev:
+      contentRoot: "build/processedResources/js/main/public"
+      script: "build/js/packages/gunnarss/kotlin/gunnarss.js"
+      api: "build/libs/gunnarss.jar"
+    prod:
+      siteRoot: ".kobweb/site"
+
+  port: 8080
