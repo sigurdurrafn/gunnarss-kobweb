@@ -1,8 +1,8 @@
-package com.gunnarss.components.layouts
+package com.gunnarss.kobweb.components.layouts
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import com.gunnarss.components.sections.NavHeader
+import com.gunnarss.kobweb.components.sections.NavHeader
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier

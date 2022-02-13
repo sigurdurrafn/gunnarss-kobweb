@@ -9,4 +9,4 @@ Kotlin multiplatform at Festina: https://www.festinasweden.se/kotlin-multiplatfo
 
 
 
-{{ .components.widgets.GoHomeLink }}
+{{{ .components.widgets.GoHomeLink }}}

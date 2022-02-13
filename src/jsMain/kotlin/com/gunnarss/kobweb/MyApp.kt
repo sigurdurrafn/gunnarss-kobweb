@@ -1,9 +1,9 @@
-package com.gunnarss
+package com.gunnarss.kobweb
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.background
+import com.varabyte.kobweb.compose.ui.modifiers.backgroundColor
 import com.varabyte.kobweb.compose.ui.modifiers.height
 import com.varabyte.kobweb.compose.ui.modifiers.width
 import com.varabyte.kobweb.core.App
@@ -30,7 +30,7 @@ object MyStyleSheet : StyleSheet() {
     }
 }
 
-private const val COLOR_MODE_KEY = "websitekoweb:app:colorMode"
+private const val COLOR_MODE_KEY = "websitekobweb:app:colorMode"
 
 @InitSilk
 fun updateTheme(ctx: InitSilkContext) {
@@ -47,7 +47,7 @@ fun MyApp(content: @Composable () -> Unit) {
             localStorage.setItem(COLOR_MODE_KEY, colorMode.name)
         }
 
-        Surface(Modifier.width(100.vw).height(100.vh).background(Color.transparent)) {
+        Surface(Modifier.width(100.vw).height(100.vh).backgroundColor(Color.transparent)) {
             content()
         }
     }

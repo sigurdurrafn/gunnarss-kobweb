@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.jetbrains.compose)
@@ -12,25 +14,30 @@ repositories {
     maven("https://us-central1-maven.pkg.dev/varabyte-repos/public")
 }
 
-group = "com.gunnarss"
+group = "com.gunnarss.kobweb"
 version = "1.0-SNAPSHOT"
+
+kobweb {
+    index {
+        description.set("Powered by Kobweb")
+    }
+}
 
 kotlin {
     jvm {
+        tasks.withType<KotlinCompile> {
+            kotlinOptions.jvmTarget = "11"
+        }
+
         tasks.named("jvmJar", Jar::class.java).configure {
-            archiveFileName.set("websitekoweb.jar")
+            archiveFileName.set("gunnarss.jar")
         }
     }
     js(IR) {
-        moduleName = "websitekoweb"
+        moduleName = "gunnarss"
         browser {
-            testTask {
-                useKarma {
-                    useFirefox()
-                }
-            }
             commonWebpackConfig {
-                outputFileName = "websitekoweb.js"
+                outputFileName = "gunnarss.js"
             }
         }
         binaries.executable()
@@ -47,6 +54,7 @@ kotlin {
                 implementation(libs.kobweb.core)
                 implementation(libs.kobweb.silk.core)
                 implementation(libs.kobweb.silk.icons.fa)
+                implementation(libs.kobwebx.markdown)
              }
         }
 

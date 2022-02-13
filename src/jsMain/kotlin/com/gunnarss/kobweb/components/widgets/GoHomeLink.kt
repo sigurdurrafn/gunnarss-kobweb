@@ -1,4 +1,4 @@
-package com.gunnarss.components.widgets
+package com.gunnarss.kobweb.components.widgets
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.silk.components.navigation.Link
