@@ -1,6 +1,8 @@
 package com.gunnarss.kobweb.components.sections
 
 import androidx.compose.runtime.*
+import com.varabyte.kobweb.compose.dom.ElementRefScope
+import com.varabyte.kobweb.compose.dom.ref
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.foundation.layout.Spacer
@@ -18,17 +20,19 @@ import com.varabyte.kobweb.silk.theme.colors.rememberColorMode
 import com.varabyte.kobweb.silk.theme.shapes.Circle
 import com.varabyte.kobweb.silk.theme.shapes.clip
 import org.jetbrains.compose.web.css.px
+import org.w3c.dom.HTMLElement
 
-private val NAV_ITEM_MARGIN = Modifier.margin(0.px, 15.px)
+private val margin = Modifier.margin(0.px, 15.px)
 
 @Composable
-private fun NavLink(path: String, text: String) {
+private fun NavLink(path: String, text: String, ref: ElementRefScope<HTMLElement>? = null) {
     Link(
         path,
         text,
         // Intentionally invert the header colors
-        NAV_ITEM_MARGIN.color(SilkTheme.palette.background),
+        margin.color(SilkTheme.palette.background),
         UndecoratedLinkVariant,
+        ref = ref
     )
 }
 
@@ -48,15 +52,20 @@ fun NavHeader() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             NavLink("/", "Home")
-            NavLink("https://github.com/sigurdurrafn/","Code")
-            NavLink("https://www.twitter.com/sigurdur","Twitter")
-            NavLink("https://www.linkedin.com/in/sigurdurrafn/","LinkedIn")
-            NavLink("https://www.festinasweden.se/","Join me!")
-            NavLink("/blog","Blog")
+            NavLink("https://github.com/sigurdurrafn/", "Code")
+            NavLink("https://www.twitter.com/sigurdur", "Twitter")
+            NavLink("https://www.linkedin.com/in/sigurdurrafn/", "LinkedIn")
+            NavLink("https://www.festinasweden.se/", "Join me!")
+            NavLink("/blog", "Blog")
+            NavLink(
+                path = "https://mastodon.online/@sigurdur",
+                text = "Mastodon",
+                ref = ref { it.setAttribute("rel", "me") }
+            )
             Spacer()
             Button(
                 onClick = { colorMode = colorMode.opposite() },
-                NAV_ITEM_MARGIN.clip(Circle())
+                margin.clip(Circle())
             ) {
                 Box(Modifier.margin(6.px)) {
                     when (colorMode) {

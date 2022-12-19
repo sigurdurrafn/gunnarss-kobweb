@@ -1,3 +1,5 @@
+@file:Suppress("UNUSED_VARIABLE")
+
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -16,12 +18,6 @@ repositories {
 
 group = "com.gunnarss.kobweb"
 version = "1.0-SNAPSHOT"
-
-kobweb {
-    index {
-        description.set("Powered by Kobweb")
-    }
-}
 
 kotlin {
     jvm {
